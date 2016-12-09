@@ -70,8 +70,9 @@ RUN apt-get install -q -y python-pip
 RUN pip install six
 
 # Install newer versions where conflict
-RUN pip install requests==2.5.2
-RUN pip install urllib3==1.8
+RUN pip install -U pip
+RUN pip install -U requests
+RUN pip install -U urllib3
 
 
 # Install all pip requirements
