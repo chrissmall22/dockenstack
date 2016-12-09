@@ -14,13 +14,13 @@ RUN apt-get update; apt-get install -qqy apt-transport-https; apt-key adv --keys
     apt-get install -qqy lxc-docker
 
 # Install utilities
-RUN apt-get -qqy install git socat curl sudo vim wget net-tools
+RUN apt-get -qqy install git socat curl sudo vim wget net-tools setuptools
 
 # Install apparmor
 RUN apt-get -qqy install apparmor
 
 # Extra requirements for pip-requirements
-RUN apt-get install -qqy libffi-dev libkrb5-dev libev-dev libvirt-dev libsqlite3-dev libxml2-dev libxslt-dev \ 
+RUN apt-get install -qqy libffi-dev libkrb5-dev libev-dev libvirt-dev libsqlite3-dev libxml2-dev libxslt-dev \
     libpq-dev libssl-dev libyaml-dev
 
 
