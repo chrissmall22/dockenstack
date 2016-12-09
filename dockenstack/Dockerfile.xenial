@@ -14,7 +14,7 @@ RUN apt-get update; apt-get install -qqy apt-transport-https; apt-key adv --keys
     apt-get install -qqy lxc-docker
 
 # Install utilities
-RUN apt-get -qqy install git socat curl sudo vim wget net-tools setuptools
+RUN apt-get -qqy install git socat curl sudo vim wget net-tools python-setuptools
 
 # Install apparmor
 RUN apt-get -qqy install apparmor
