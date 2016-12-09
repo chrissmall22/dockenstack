@@ -1,8 +1,8 @@
-# Eric Windisch '2014
+# Forked from Eric Windisch '2014
 # Forked from code by original author: Paul Czarkowski
 
-FROM ubuntu:trusty
-MAINTAINER Eric Windisch "ewindisch@docker.com"
+FROM ubuntu:xenial
+MAINTAINER Chris Small "christopher.small@hpe.com"
 
 EXPOSE 80 5000 8773 8774 8776 9292
 # Set DEBIAN_FRONTEND to avoid warning like "debconf: (TERM is not set, so the dialog frontend is not usable.)"
@@ -20,9 +20,8 @@ RUN apt-get -qqy install git socat curl sudo vim wget net-tools
 RUN apt-get -qqy install apparmor
 
 # Extra requirements for pip-requirements
-RUN apt-get install -qqy libffi-dev libkrb5-dev libev-dev libvirt-dev libsqlite3-dev libxml2-dev libxslt-dev \ 
+RUN apt-get install -qqy libffi-dev libkrb5-dev libev-dev libvirt-dev libsqlite3-dev libxml2-dev libxslt-dev \
     libpq-dev libssl-dev libyaml-dev
-
 
 # Configure and install MySQL
 RUN echo 'mysql-server mysql-server/root_password password devstack' | debconf-set-selections; \
