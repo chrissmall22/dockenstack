@@ -69,6 +69,11 @@ RUN apt-get install -q -y python-pip
 # Install six from pip before getting from global-requirements (due to bugs...)
 RUN pip install six
 
+# Install newer versions where conflict
+RUN pip install requests==2.5.2
+RUN pip install urllib3==1.8
+
+
 # Install all pip requirements
 RUN pip install -r https://raw.github.com/openstack/requirements/master/global-requirements.txt
 RUN pip install -r https://raw.github.com/openstack/tempest/master/requirements.txt
