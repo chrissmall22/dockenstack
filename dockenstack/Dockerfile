@@ -57,8 +57,8 @@ RUN /bin/bash /opt/dockenstack/bin/apt-cache-devstack
 
 # Install/configure dbus for libvirt (only needed if using libvirt drivers, not docker)
 # creates symlink to /usr/bin due to bug in saucy's init script for dbus.
-RUN apt-get install -q -y dbus; \
-    ln -s /bin/dbus-daemon /usr/bin/dbus-daemon
+RUN apt-get install -q -y dbus;
+#    ln -s /bin/dbus-daemon /usr/bin/dbus-daemon
 
 # Mask python-six because the apt package can conflict with the pypi version.
 RUN apt-get remove -q -y python-six
