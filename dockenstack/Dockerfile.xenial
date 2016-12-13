@@ -18,7 +18,7 @@ RUN chown root:root /etc/sudoers.d/devstack
 RUN apt-get update
 
 # Install utilities
-RUN apt-get -qqy install git socat curl sudo vim wget net-tools python-setuptools
+RUN apt-get -qqy install git socat curl sudo vim wget net-tools python-setuptools uuid-runtime
 
 # Install devstack scripts
 RUN git clone https://github.com/openstack-dev/devstack /devstack
