@@ -15,7 +15,10 @@ ADD devstack.sudo /etc/sudoers.d/devstack
 RUN chown root:root /etc/sudoers.d/devstack
 
 # Requirements
-RUN apt-get update; apt-get -qqy install git
+RUN apt-get update
+
+# Install utilities
+RUN apt-get -qqy install git socat curl sudo vim wget net-tools python-setuptools
 
 # Install devstack scripts
 RUN git clone https://github.com/openstack-dev/devstack /devstack
