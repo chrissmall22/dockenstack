@@ -10,8 +10,7 @@ ENV DEBIAN_FRONTEND="noninteractive"
 
 # Setup devstack user
 RUN mkdir -p /opt; \
-    useradd -m -s /bin/bash -d /opt/stack devstack && \
-    usermod -a -G docker devstack
+    useradd -m -s /bin/bash -d /opt/stack devstack
 ADD devstack.sudo /etc/sudoers.d/devstack
 RUN chown root:root /etc/sudoers.d/devstack
 
