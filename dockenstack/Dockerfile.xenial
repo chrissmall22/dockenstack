@@ -31,7 +31,7 @@ ADD localrc /devstack/localrc
 ADD localrc.d /devstack/localrc.d
 
 # start
-RUN /devstack/start.sh
+RUN /devstack/stack.sh
 
 
 
