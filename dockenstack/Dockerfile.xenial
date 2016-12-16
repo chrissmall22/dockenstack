@@ -38,6 +38,8 @@ ADD localrc.d /devstack/localrc.d
 # Install prereq packages.
 RUN /devstack/tools/install_prereqs.sh
 
+RUN chown -R devstack /devstack
+
 # start
 RUN su devstack -c '/devstack/stack.sh'
 
